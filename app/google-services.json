@@ -1,0 +1,48 @@
+{
+  "project_info": {
+    "project_number": "959148008682",
+    "firebase_url": "https://calculadoraflex-eduardo.firebaseio.com",
+    "project_id": "calculadoraflex-eduardo",
+    "storage_bucket": "calculadoraflex-eduardo.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:959148008682:android:9afb6ce007fc24e092e393",
+        "android_client_info": {
+          "package_name": "com.eduardo.calculadoraflex"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "959148008682-b27rgpbl1pe0g9oqapbpmo2j0i34pbr4.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.eduardo.calculadoraflex",
+            "certificate_hash": "80d7aba3af0f29d89e62871ba62e18dd32e7bd9f"
+          }
+        },
+        {
+          "client_id": "959148008682-qk6qgikb6so1k587s6h5c95ocrt5inu2.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyBL-hbdeDjdarPU0H7YAFOMWxEwKOuwLg4"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "959148008682-qk6qgikb6so1k587s6h5c95ocrt5inu2.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
