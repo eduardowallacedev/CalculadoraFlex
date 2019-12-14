@@ -26,10 +26,17 @@ class LoginActivity : AppCompatActivity() {
 
     override fun onActivityResult(requestCode: Int, resultCode: Int, data: Intent?) {
         super.onActivityResult(requestCode, resultCode, data)
-        // when no lugar do if
-        when(requestCode){
-            NEW_USER_REQUEST -> {}
-            else -> {}
+        when (requestCode) {
+            NEW_USER_REQUEST -> {
+                when (resultCode) {
+                    Activity.RESULT_OK -> {
+                        inputLoginEmail
+                            .setText(data?.getStringExtra("email"))
+                    }
+                }
+            }
+            else -> {
+            }
         }
 
     }
