@@ -23,6 +23,8 @@ class LoginActivity : AppCompatActivity() {
 
         mAuth = FirebaseAuth.getInstance()
 
+        mAuth.currentUser?.reload()
+
         if (mAuth.currentUser != null) {
             goToHome()
         }
