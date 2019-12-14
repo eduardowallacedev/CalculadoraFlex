@@ -5,7 +5,7 @@ import android.os.Bundle
 import android.widget.Toast
 import androidx.appcompat.app.AppCompatActivity
 import com.eduardo.calculadoraflex.R
-import com.eduardo.calculadoraflex.model.User
+import com.eduardo.calculadoraflex.model.Users
 import com.google.firebase.auth.FirebaseAuth
 import com.google.firebase.database.FirebaseDatabase
 import kotlinx.android.synthetic.main.activity_sign_up.*
@@ -34,7 +34,7 @@ class SignUpActivity : AppCompatActivity() {
     }
 
     private fun saveInRealTimeDatabase() {
-        val user = User(
+        val user = Users(
             inputName.text.toString(), inputEmail.text.toString(),
             inputPhone.text.toString()
         )
@@ -50,7 +50,6 @@ class SignUpActivity : AppCompatActivity() {
                     val returnIntent = Intent()
                     returnIntent.putExtra("email", inputEmail.text.toString())
                     setResult(RESULT_OK, returnIntent)
-                    finish()
                     finish()
                 } else {
                     Toast.makeText(this, "Erro ao criar o usuário", Toast.LENGTH_SHORT).show()
