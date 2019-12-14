@@ -2,10 +2,13 @@ package com.eduardo.calculadoraflex.ui.form
 
 import android.content.Intent
 import android.os.Bundle
+import android.view.Menu
+import android.view.MenuItem
 import androidx.appcompat.app.AppCompatActivity
 import com.eduardo.calculadoraflex.R
 import com.eduardo.calculadoraflex.Util.DatabaseUtil
 import com.eduardo.calculadoraflex.model.CarData
+import com.eduardo.calculadoraflex.ui.login.LoginActivity
 import com.eduardo.calculadoraflex.ui.result.ResultActivity
 import com.eduardo.calculadoraflex.watchers.DecimalTextWatcher
 import com.google.firebase.auth.FirebaseAuth
@@ -79,8 +82,36 @@ class FormActivity : AppCompatActivity() {
                 override fun onCancelled(error: DatabaseError) {}
             })
     }
-
-
+    private val defaultClearValueText = "0.0"
+    override fun onCreateOptionsMenu(menu: Menu): Boolean {
+        val inflater = menuInflater
+        inflater.inflate(R.menu.form_menu, menu)
+        return true
+    }
+    override fun onOptionsItemSelected(item: MenuItem): Boolean {
+        when (item.getItemId()) {
+            R.id.action_clear -> {
+                clearData()
+                return true
+            }
+            R.id.action_logout -> {
+                logout()
+                return true
+            }
+            else -> return super.onOptionsItemSelected(item)
+        }
+    }
+    private fun logout() {
+        mAuth.signOut()
+        startActivity(Intent(this, LoginActivity::class.java))
+        finish()
+    }
+    private fun clearData() {
+        etGasPrice.setText(defaultClearValueText)
+        etEthanolPrice.setText(defaultClearValueText)
+        etGasAverage.setText(defaultClearValueText)
+        etEthanolAverage.setText(defaultClearValueText)
+    }
 }
 
 
